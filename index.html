@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MR. HITZ | Luxury Editorial Chess</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Noto+Serif+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#F4EFE6',
+                        beige: '#E8D8C4',
+                        dark: '#111111',
+                        textMain: '#121212',
+                        gold: '#B8915C'
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['"Noto Serif Display"', 'serif'],
+                        playfair: ['"Playfair Display"', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for Editorials & Lenis -->
+    <style>
+        body {
+            background-color: #F4EFE6;
+            color: #121212;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::selection {
+            background-color: #B8915C;
+            color: #F4EFE6;
+        }
+
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* GSAP Text Reveal Utilities */
+        .line-wrapper {
+            overflow: hidden;
+            display: block;
+        }
+        .word-wrapper {
+            overflow: hidden;
+            display: inline-block;
+            vertical-align: top;
+            padding-bottom: 0.1em;
+            margin-right: 0.25em;
+        }
+        .word-inner {
+            display: inline-block;
+            transform-origin: bottom left;
+            will-change: transform, opacity;
+        }
+
+        /* Lenis Smooth Scroll Recommended Styles */
+        html.lenis {
+            height: auto;
+        }
+        .lenis.lenis-smooth {
+            scroll-behavior: auto;
+        }
+        .lenis.lenis-smooth [data-lenis-prevent] {
+            overscroll-behavior: contain;
+        }
+        .lenis.lenis-stopped {
+            overflow: hidden;
+        }
+        .lenis.lenis-scrolling iframe {
+            pointer-events: none;
+        }
+
+        /* Editorial borders */
+        .border-luxury {
+            border-color: rgba(18, 18, 18, 0.08);
+        }
+        .border-luxury-light {
+            border-color: rgba(244, 239, 230, 0.1);
+        }
+    </style>
+</head>
+<body class="font-sans">
+
+    <nav class="fixed w-full z-50 mix-blend-difference text-cream py-8 px-6 md:px-12 pointer-events-none">
+        <div class="flex justify-between items-center max-w-[1800px] mx-auto pointer-events-auto">
+            <div class="font-serif text-xl font-bold tracking-widest uppercase cursor-pointer" onclick="window.scrollTo(0,0)">
+                MR. HITH
+            </div>
+            <div class="hidden md:flex gap-12 text-[10px] uppercase tracking-[0.2em] font-medium">
+                <a href="#journey" class="hover:text-gold transition-colors duration-500">Journey</a>
+                <a href="#style" class="hover:text-gold transition-colors duration-500">Style</a>
+                <a href="#vision" class="hover:text-gold transition-colors duration-500">Vision</a>
+                <a href="#contact" class="hover:text-gold transition-colors duration-500">Contact</a>
+            </div>
+            <button class="text-[10px] uppercase tracking-[0.2em] font-medium border-b border-transparent hover:border-cream transition-all duration-500 pb-1">
+                Menu
+            </button>
+        </div>
+    </nav>
+
+    <section class="relative h-[100svh] w-full flex flex-col lg:flex-row border-luxury border-b">
+        <!-- Left Side: Cinematic Portrait -->
+        <div class="w-full h-[40vh] lg:h-full lg:w-[40%] relative border-luxury border-r p-6 lg:p-12 flex-shrink-0">
+            <div class="mask-image-container w-full h-full relative overflow-hidden bg-dark">
+                <div class="img-mask absolute inset-0 z-10 bg-cream origin-bottom"></div>
+                <img src="https://img.magnific.com/free-photo/view-singular-chess-piece_23-2150828427.jpg?semt=ais_hybrid&w=740&q=80" alt="MR HITZ Portrait" class="parallax-hero w-full h-[120%] object-cover grayscale contrast-125 origin-top">
+                <div class="absolute inset-0 bg-dark/20 mix-blend-multiply z-0"></div>
+            </div>
+            <div class="absolute bottom-12 left-6 origin-bottom-left -rotate-90 text-[9px] uppercase tracking-[0.4em] font-semibold text-gold hidden lg:block">
+                Vol. 01 — 2026
+            </div>
+        </div>
+
+        <!-- Right Side: Massive Typography -->
+        <div class="w-full lg:w-[60%] h-[60vh] lg:h-full flex flex-col justify-center px-8 md:px-20 relative pt-12 lg:pt-0 bg-cream">
+            <div class="max-w-4xl">
+                <div class="fade-up inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.4em] text-gold font-semibold mb-8 lg:mb-12">
+                    <span class="w-8 h-[1px] bg-gold"></span>
+                    Competitive Chess Player
+                </div>
+
+                <h1 class="font-serif font-bold uppercase leading-[0.85] tracking-tight mb-8 lg:mb-12 flex flex-wrap" style="font-size: clamp(4rem, 10vw, 12rem);">
+                    <div class="gsap-reveal-text mr-[0.2em]">MR.</div>
+                    <div class="gsap-reveal-text text-gold">HITH</div>
+                </h1>
+
+                <div class="grid md:grid-cols-2 gap-8 lg:gap-12 mt-8 lg:mt-16 border-luxury border-t pt-8 lg:pt-12">
+                    <div>
+                        <h2 class="gsap-reveal-text font-playfair text-2xl md:text-3xl leading-snug italic text-textMain">
+                            Aggressive Chess. Tactical Precision. Future International Master.
+                        </h2>
+                    </div>
+                    <div class="flex flex-col justify-between">
+                        <p class="fade-up text-sm leading-[2] text-textMain/70 mb-8 lg:mb-10">
+                            Inspired by The Queen's Gambit. Driven by discipline. Built through self-study. Competing today. Mastering tomorrow.
+                        </p>
+
+                        <div class="fade-up flex flex-wrap gap-6">
+                            <a href="#journey" class="text-[10px] uppercase tracking-[0.2em] font-semibold border-b border-textMain pb-1 hover:text-gold hover:border-gold transition-colors duration-500 flex items-center gap-2">
+                                Explore Journey <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                            </a>
+                            <a href="#achievements" class="text-[10px] uppercase tracking-[0.2em] font-semibold text-textMain/50 hover:text-textMain transition-colors duration-500 pb-1 flex items-center gap-2">
+                                View Achievements
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements" class="py-24 md:py-48 px-6 md:px-12 bg-cream">
+        <div class="max-w-[1800px] mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 md:mb-24 gap-10 border-luxury border-b pb-12">
+                <h2 class="gsap-reveal-text font-serif text-5xl md:text-7xl font-medium tracking-tight uppercase">Featured<br>Triumphs</h2>
+                <p class="fade-up text-sm text-textMain/60 max-w-sm leading-relaxed font-playfair italic md:text-lg">
+                    A curated selection of defining moments and rating milestones marking the path to mastery.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-textMain/10 border-luxury border">
+                <!-- 1 -->
+                <div class="bg-cream p-10 md:p-20 group relative overflow-hidden">
+                    <div class="absolute inset-0 bg-beige scale-y-0 origin-bottom group-hover:scale-y-100 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] z-0"></div>
+                    <div class="relative z-10">
+                        <div class="flex justify-between items-start mb-16 md:mb-32">
+                            <span class="text-[10px] uppercase tracking-[0.3em] font-semibold text-gold">01</span>
+                            <i data-lucide="arrow-up-right" class="w-6 h-6 text-textMain/30 group-hover:text-textMain transition-colors duration-500"></i>
+                        </div>
+                        <h3 class="font-serif text-4xl md:text-5xl mb-6 tracking-tight">Vijayawada Circuit</h3>
+                        <p class="text-sm text-textMain/60">Prize Winner. A testament to rigorous opening preparation and tactical execution.</p>
+                    </div>
+                </div>
+
+                <!-- 2 (Image) -->
+                <div class="bg-cream p-6 md:p-10 relative overflow-hidden h-[400px] md:h-auto group mask-image-container">
+                    <div class="img-mask absolute inset-0 z-20 bg-cream origin-top"></div>
+                    <img src="https://images.unsplash.com/photo-1528819622765-d6bcf132f793?q=80&w=2070&auto=format&fit=crop" alt="Chess Board" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 z-0 grayscale">
+                    <div class="absolute inset-0 bg-dark/40 mix-blend-multiply z-10"></div>
+                    <div class="absolute inset-0 p-10 md:p-20 flex flex-col justify-end text-cream z-10">
+                        <span class="text-[10px] uppercase tracking-[0.3em] font-semibold mb-4 text-gold">02</span>
+                        <h3 class="font-serif text-4xl md:text-5xl tracking-tight">Coimbatore Open</h3>
+                        <p class="text-sm mt-4 opacity-80 font-playfair italic">Prize Winner.</p>
+                    </div>
+                </div>
+
+                <!-- 3 -->
+                <div class="bg-cream p-10 md:p-20 group relative overflow-hidden">
+                    <div class="absolute inset-0 bg-beige scale-y-0 origin-top group-hover:scale-y-100 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] z-0"></div>
+                    <div class="relative z-10">
+                        <div class="flex justify-between items-start mb-16 md:mb-32">
+                            <span class="text-[10px] uppercase tracking-[0.3em] font-semibold text-gold">03</span>
+                            <i data-lucide="arrow-up-right" class="w-6 h-6 text-textMain/30 group-hover:text-textMain transition-colors duration-500"></i>
+                        </div>
+                        <h3 class="font-serif text-4xl md:text-5xl mb-6 tracking-tight">WFM Victory</h3>
+                        <p class="text-sm text-textMain/60">Rapid Chess Format. A landmark victory against a titled Woman FIDE Master.</p>
+                    </div>
+                </div>
+
+                <!-- 4 -->
+                <div class="bg-cream p-10 md:p-20 group relative overflow-hidden">
+                    <div class="absolute inset-0 bg-dark scale-y-0 origin-bottom group-hover:scale-y-100 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] z-0"></div>
+                    <div class="relative z-10 flex flex-col h-full">
+                        <div class="flex justify-between items-start mb-16">
+                            <span class="text-[10px] uppercase tracking-[0.3em] font-semibold text-gold">04</span>
+                            <i data-lucide="arrow-up-right" class="w-6 h-6 text-textMain/30 group-hover:text-cream transition-colors duration-500"></i>
+                        </div>
+                        <div class="mt-auto">
+                            <div class="font-serif text-7xl md:text-9xl text-gold mb-6 tracking-tighter leading-none group-hover:text-cream transition-colors duration-500">2000+</div>
+                            <h3 class="font-sans text-sm uppercase tracking-widest font-semibold mb-2 group-hover:text-gold transition-colors duration-500">Peak Online Rating</h3>
+                            <p class="text-sm text-textMain/60 group-hover:text-cream/50 transition-colors duration-500">Chess.com & Lichess.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="journey" class="py-24 md:py-48 bg-beige border-luxury border-y relative overflow-hidden">
+        <div class="max-w-[1600px] mx-auto px-6 md:px-12">
+            <div class="mb-32 text-center md:text-left">
+                <h2 class="gsap-reveal-text font-serif text-5xl md:text-8xl font-medium tracking-tight uppercase">The Chronicle</h2>
+            </div>
+
+            <div class="flex flex-col gap-32 md:gap-48">
+                <!-- 2023 -->
+                <div class="flex flex-col md:flex-row items-center gap-10 md:gap-20 lg:gap-32">
+                    <div class="w-full md:w-1/2 relative mask-image-container">
+                        <div class="aspect-[3/4] w-full overflow-hidden relative">
+                            <div class="img-mask absolute inset-0 z-10 bg-beige origin-top"></div>
+                            <img src="https://images.unsplash.com/photo-1580541832626-2a7131ee809f?q=80&w=2087&auto=format&fit=crop" alt="Chess 2023" class="parallax-img w-full h-[120%] object-cover grayscale contrast-125">
+                        </div>
+                        <div class="absolute top-1/2 -translate-y-1/2 -right-8 md:-right-24 text-[6rem] md:text-[12rem] font-serif font-bold text-cream opacity-60 pointer-events-none mix-blend-overlay z-10 tracking-tighter">
+                            2023
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 flex flex-col justify-center fade-slide-right">
+                        <span class="text-gold font-serif text-4xl italic mb-6 block">2023</span>
+                        <h3 class="font-serif text-4xl md:text-6xl mb-8 tracking-tight">The Genesis</h3>
+                        <p class="text-textMain/70 leading-relaxed max-w-md md:text-lg">Inspired by the narrative depth and strategic beauty showcased in The Queen's Gambit, casual interest transformed into absolute dedication.</p>
+                        <div class="w-16 h-px bg-textMain/20 mt-12"></div>
+                    </div>
+                </div>
+
+                <!-- 2024 -->
+                <div class="flex flex-col md:flex-row-reverse items-center gap-10 md:gap-20 lg:gap-32">
+                    <div class="w-full md:w-1/2 relative mask-image-container">
+                        <div class="aspect-[3/4] w-full overflow-hidden relative">
+                            <div class="img-mask absolute inset-0 z-10 bg-beige origin-top"></div>
+                            <img src="https://m.media-amazon.com/images/I/71EYNVgov9L.jpg" alt="Chess 2024" class="parallax-img w-full h-[120%] object-cover grayscale contrast-125">
+                        </div>
+                        <div class="absolute top-1/2 -translate-y-1/2 -left-8 md:-left-24 text-[6rem] md:text-[12rem] font-serif font-bold text-cream opacity-60 pointer-events-none mix-blend-overlay z-10 tracking-tighter">
+                            2024
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 flex flex-col justify-center fade-slide-left items-start md:items-end md:text-right">
+                        <span class="text-gold font-serif text-4xl italic mb-6 block">2024</span>
+                        <h3 class="font-serif text-4xl md:text-6xl mb-8 tracking-tight">Identity Forged</h3>
+                        <p class="text-textMain/70 leading-relaxed max-w-md md:text-lg">Months of rigorous self-study culminated in a distinct style. Aggressive, tactical, and fearless. A player who embraces complexity and creates chaos on the board.</p>
+                        <div class="w-16 h-px bg-textMain/20 mt-12"></div>
+                    </div>
+                </div>
+
+                <!-- 2025 -->
+                <div class="flex flex-col md:flex-row items-center gap-10 md:gap-20 lg:gap-32">
+                    <div class="w-full md:w-1/2 relative mask-image-container">
+                        <div class="aspect-[3/4] w-full overflow-hidden relative">
+                            <div class="img-mask absolute inset-0 z-10 bg-beige origin-top"></div>
+                            <img src="https://images.unsplash.com/photo-1560174038-da43ac74f01b?q=80&w=2014&auto=format&fit=crop" alt="Chess 2025" class="parallax-img w-full h-[120%] object-cover grayscale contrast-125">
+                        </div>
+                        <div class="absolute top-1/2 -translate-y-1/2 -right-8 md:-right-24 text-[6rem] md:text-[12rem] font-serif font-bold text-cream opacity-60 pointer-events-none mix-blend-overlay z-10 tracking-tighter">
+                            2025
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 flex flex-col justify-center fade-slide-right">
+                        <span class="text-gold font-serif text-4xl italic mb-6 block">2025</span>
+                        <h3 class="font-serif text-4xl md:text-6xl mb-8 tracking-tight">Competitive Fire</h3>
+                        <p class="text-textMain/70 leading-relaxed max-w-md md:text-lg">Transitioning from study to arena. Securing tournament prizes in Vijayawada and Coimbatore, highlighted by a definitive victory over a titled WFM in rapid play.</p>
+                        <div class="w-16 h-px bg-textMain/20 mt-12"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="style" class="bg-dark text-cream py-32 md:py-48">
+        <div class="max-w-[1800px] mx-auto px-6 md:px-12">
+            <div class="mb-24">
+                <h2 class="gsap-reveal-text font-serif text-6xl md:text-9xl font-bold tracking-tighter uppercase">The Way I Play</h2>
+            </div>
+
+            <div class="border-luxury-light border-t">
+                <div class="style-row group border-luxury-light border-b py-12 md:py-20 flex items-center justify-between cursor-default transition-all duration-700 hover:bg-cream/[0.03] px-4 md:px-8 overflow-hidden">
+                    <div class="font-serif text-5xl md:text-8xl text-cream/30 group-hover:text-gold group-hover:translate-x-12 transition-all duration-700 font-light tracking-tight origin-left">Aggressive</div>
+                    <div class="text-[10px] uppercase tracking-[0.4em] opacity-0 group-hover:opacity-100 group-hover:-translate-x-8 transition-all duration-700 text-gold font-medium">Core Trait</div>
+                </div>
+                <div class="style-row group border-luxury-light border-b py-12 md:py-20 flex items-center justify-between cursor-default transition-all duration-700 hover:bg-cream/[0.03] px-4 md:px-8 overflow-hidden">
+                    <div class="font-serif text-5xl md:text-8xl text-cream/30 group-hover:text-gold group-hover:translate-x-12 transition-all duration-700 font-light tracking-tight origin-left">Tactical</div>
+                    <div class="text-[10px] uppercase tracking-[0.4em] opacity-0 group-hover:opacity-100 group-hover:-translate-x-8 transition-all duration-700 text-gold font-medium">Core Trait</div>
+                </div>
+                <div class="style-row group border-luxury-light border-b py-12 md:py-20 flex items-center justify-between cursor-default transition-all duration-700 hover:bg-cream/[0.03] px-4 md:px-8 overflow-hidden">
+                    <div class="font-serif text-5xl md:text-8xl text-cream/30 group-hover:text-gold group-hover:translate-x-12 transition-all duration-700 font-light tracking-tight origin-left">Creative</div>
+                    <div class="text-[10px] uppercase tracking-[0.4em] opacity-0 group-hover:opacity-100 group-hover:-translate-x-8 transition-all duration-700 text-gold font-medium">Core Trait</div>
+                </div>
+                <div class="style-row group border-luxury-light border-b py-12 md:py-20 flex items-center justify-between cursor-default transition-all duration-700 hover:bg-cream/[0.03] px-4 md:px-8 overflow-hidden">
+                    <div class="font-serif text-5xl md:text-8xl text-cream/30 group-hover:text-gold group-hover:translate-x-12 transition-all duration-700 font-light tracking-tight origin-left">Fearless</div>
+                    <div class="text-[10px] uppercase tracking-[0.4em] opacity-0 group-hover:opacity-100 group-hover:-translate-x-8 transition-all duration-700 text-gold font-medium">Core Trait</div>
+                </div>
+                <div class="style-row group border-luxury-light border-b py-12 md:py-20 flex items-center justify-between cursor-default transition-all duration-700 hover:bg-cream/[0.03] px-4 md:px-8 overflow-hidden">
+                    <div class="font-serif text-5xl md:text-8xl text-cream/30 group-hover:text-gold group-hover:translate-x-12 transition-all duration-700 font-light tracking-tight origin-left">Calculated</div>
+                    <div class="text-[10px] uppercase tracking-[0.4em] opacity-0 group-hover:opacity-100 group-hover:-translate-x-8 transition-all duration-700 text-gold font-medium">Core Trait</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-cream">
+        <div class="grid lg:grid-cols-2">
+            <!-- White Repertoire -->
+            <div class="bg-beige p-12 md:p-24 xl:p-32 flex flex-col justify-center min-h-[80vh] relative overflow-hidden group">
+                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1529699211952-734e80c4d42b?q=80&w=2071&auto=format&fit=crop')] opacity-5 bg-cover bg-center grayscale mix-blend-multiply transition-opacity duration-1000 group-hover:opacity-15"></div>
+                <div class="relative z-10">
+                    <span class="fade-up text-[10px] uppercase tracking-[0.4em] font-semibold text-gold mb-12 block">White Repertoire</span>
+                    <h3 class="gsap-reveal-text font-serif text-6xl md:text-9xl tracking-tight mb-8">Ruy Lopez</h3>
+                    <p class="fade-up text-textMain/70 leading-relaxed max-w-md mb-16 text-lg font-playfair italic">
+                        The Spanish Game. A cornerstone of strategic pressure and positional depth. Utilizing classical excellence to squeeze advantages and dictate the pace.
+                    </p>
+                    <div class="fade-up border-luxury border-t pt-12">
+                        <ul class="space-y-6">
+                            <li class="flex items-center gap-6 text-sm md:text-base font-medium tracking-wide uppercase text-xs"><span class="w-8 h-[1px] bg-gold block"></span> Strategic Pressure</li>
+                            <li class="flex items-center gap-6 text-sm md:text-base font-medium tracking-wide uppercase text-xs"><span class="w-8 h-[1px] bg-gold block"></span> Classical Excellence</li>
+                            <li class="flex items-center gap-6 text-sm md:text-base font-medium tracking-wide uppercase text-xs"><span class="w-8 h-[1px] bg-gold block"></span> Positional Depth</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Black Repertoire -->
+            <div class="bg-cream p-12 md:p-24 xl:p-32 flex flex-col justify-center min-h-[80vh] relative overflow-hidden group">
+                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1588412079929-790b9f593d8e?q=80&w=2070&auto=format&fit=crop')] opacity-5 bg-cover bg-center grayscale mix-blend-multiply transition-opacity duration-1000 group-hover:opacity-10"></div>
+                <div class="relative z-10">
+                    <span class="fade-up text-[10px] uppercase tracking-[0.4em] font-semibold text-textMain/50 mb-12 block">Black Repertoire</span>
+                    <h3 class="gsap-reveal-text font-serif text-6xl md:text-9xl tracking-tight mb-8">Caro-Kann</h3>
+                    <p class="fade-up text-textMain/70 leading-relaxed max-w-md mb-16 text-lg font-playfair italic">
+                        An unyielding defense. Built on a solid structure that invites overextension, providing an incredibly reliable foundation for lethal counterattacks.
+                    </p>
+                    <div class="fade-up border-luxury border-t pt-12">
+                        <ul class="space-y-6">
+                            <li class="flex items-center gap-6 text-sm md:text-base font-medium tracking-wide uppercase text-xs"><span class="w-8 h-[1px] bg-textMain/30 block"></span> Solid Structure</li>
+                            <li class="flex items-center gap-6 text-sm md:text-base font-medium tracking-wide uppercase text-xs"><span class="w-8 h-[1px] bg-textMain/30 block"></span> Counterattack Potential</li>
+                            <li class="flex items-center gap-6 text-sm md:text-base font-medium tracking-wide uppercase text-xs"><span class="w-8 h-[1px] bg-textMain/30 block"></span> Reliable Foundation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-dark text-cream relative overflow-hidden min-h-screen flex items-center">
+        <div class="absolute inset-0 mask-image-container z-0">
+            <div class="img-mask absolute inset-0 z-10 bg-dark origin-bottom"></div>
+            <img src="https://images.unsplash.com/photo-1588412079929-790b9f593d8e?q=80&w=2070&auto=format&fit=crop" alt="Chess Inspiration" class="parallax-img w-full h-[130%] object-cover opacity-40 grayscale origin-top">
+            <div class="absolute inset-0 bg-gradient-to-r from-dark via-dark/80 to-transparent"></div>
+        </div>
+
+        <div class="max-w-[1800px] w-full mx-auto px-6 md:px-12 relative z-10 py-32">
+            <div class="max-w-2xl">
+                <span class="fade-up text-[10px] uppercase tracking-[0.4em] font-semibold text-gold mb-8 block">Inspiration</span>
+                <h2 class="gsap-reveal-text font-serif text-6xl md:text-8xl font-bold tracking-tight mb-12 uppercase leading-none">Daniil<br>Dubov.</h2>
+                <p class="fade-up font-playfair text-3xl md:text-5xl italic text-gold leading-snug mb-12">
+                    "Creative chess is beautiful chess."
+                </p>
+                <p class="fade-up text-cream/70 leading-relaxed text-lg font-light">
+                    His fearless and imaginative style continues to influence my approach to the game. His willingness to embrace dynamic positions inspires me to seek creativity and initiative in every battle, proving that risk is an essential element of art.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 md:py-48 bg-beige">
+        <div class="max-w-[1800px] mx-auto px-6 md:px-12">
+            <div class="mb-32 md:mb-48 flex justify-between items-end">
+                <h2 class="gsap-reveal-text font-serif text-6xl md:text-9xl font-medium tracking-tighter uppercase">The Road To IM</h2>
+            </div>
+
+            <div class="relative pt-10 pb-20 overflow-x-auto hide-scrollbar">
+                <div class="min-w-[1200px] relative">
+                    <!-- Base Track -->
+                    <div class="absolute top-1/2 left-0 w-full h-px bg-textMain/10 -translate-y-1/2"></div>
+
+                    <!-- Animated Progress Track -->
+                    <div id="progress-line" class="absolute top-1/2 left-0 h-px bg-gold -translate-y-1/2 w-0"></div>
+
+                    <div class="flex justify-between relative">
+                        <!-- Stages -->
+                        <div class="flex flex-col items-center relative w-0">
+                            <div class="progress-node w-3 h-3 rounded-full mb-8 z-10 bg-gold scale-0"></div>
+                            <span class="absolute top-10 w-max text-center text-[10px] uppercase tracking-[0.2em] text-textMain font-semibold">Beginner</span>
+                        </div>
+                        <div class="flex flex-col items-center relative w-0">
+                            <div class="progress-node w-3 h-3 rounded-full mb-8 z-10 bg-gold scale-0"></div>
+                            <span class="absolute top-10 w-max text-center text-[10px] uppercase tracking-[0.2em] text-textMain font-semibold">Club Player</span>
+                        </div>
+                        <div class="flex flex-col items-center relative w-0">
+                            <div class="progress-node w-4 h-4 rounded-full mb-8 z-10 bg-textMain ring-[6px] ring-gold/20 scale-0"></div>
+                            <span class="absolute top-10 w-max text-center text-[10px] uppercase tracking-[0.2em] text-textMain font-bold">Tournament Player</span>
+                        </div>
+                        <div class="flex flex-col items-center relative w-0">
+                            <div class="progress-node w-3 h-3 rounded-full mb-8 z-10 bg-beige border border-textMain/30 scale-0"></div>
+                            <span class="absolute top-10 w-max text-center text-[10px] uppercase tracking-[0.2em] text-textMain/40">Expert</span>
+                        </div>
+                        <div class="flex flex-col items-center relative w-0">
+                            <div class="progress-node w-3 h-3 rounded-full mb-8 z-10 bg-beige border border-textMain/30 scale-0"></div>
+                            <span class="absolute top-10 w-max text-center text-[10px] uppercase tracking-[0.2em] text-textMain/40">Candidate Master</span>
+                        </div>
+                        <div class="flex flex-col items-center relative w-0">
+                            <div class="progress-node w-3 h-3 rounded-full mb-8 z-10 bg-beige border border-textMain/30 scale-0"></div>
+                            <span class="absolute top-10 w-max text-center text-[10px] uppercase tracking-[0.2em] text-textMain/40">FIDE Master</span>
+                        </div>
+                        <div class="flex flex-col items-center relative w-0">
+                            <div class="progress-node w-4 h-4 rounded-full mb-8 z-10 bg-transparent border-2 border-gold scale-0"></div>
+                            <span class="absolute top-10 w-max text-center text-[10px] uppercase tracking-[0.2em] text-gold font-bold">International Master</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-48 md:py-64 bg-cream flex items-center justify-center text-center px-6 border-luxury border-y">
+        <div class="max-w-6xl">
+            <div class="gsap-reveal-text font-playfair text-4xl md:text-7xl text-textMain leading-[1.4] italic tracking-tight">
+                "Every move reveals character.<br/>
+                <span class="text-textMain/40">Every loss reveals weakness.</span><br/>
+                <span class="text-gold">Every game reveals growth.</span>"
+            </div>
+        </div>
+    </section>
+
+    <section id="vision" class="bg-dark text-cream pt-32 pb-16">
+        <div class="max-w-[1800px] mx-auto px-6 md:px-12 border-luxury-light border-b pb-32 mb-16">
+            <div class="grid lg:grid-cols-2 gap-20 items-end">
+                <div>
+                    <span class="fade-up text-[10px] uppercase tracking-[0.4em] font-semibold text-gold mb-8 block">The Next Chapter</span>
+                    <h2 class="gsap-reveal-text font-serif text-6xl md:text-8xl tracking-tight mb-12 uppercase">Vision & Legacy</h2>
+                    <p class="fade-up text-cream/70 text-xl leading-relaxed max-w-xl font-light">
+                        My long-term vision is to achieve the International Master title while documenting the entire process publicly. Beyond competition, I aim to create content, stream high-level games, and inspire players who choose the path of self-improvement through chess.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-px bg-cream/10 border-luxury-light border">
+                    <div class="bg-dark p-10 md:p-16 aspect-square flex flex-col justify-between group hover:bg-cream/[0.03] transition-colors duration-700">
+                        <i data-lucide="monitor-play" class="w-6 h-6 text-gold opacity-50 group-hover:opacity-100 transition-opacity duration-500 transform group-hover:scale-110"></i>
+                        <span class="font-serif text-2xl md:text-3xl font-light tracking-wide mt-8">Streaming</span>
+                    </div>
+                    <div class="bg-dark p-10 md:p-16 aspect-square flex flex-col justify-between group hover:bg-cream/[0.03] transition-colors duration-700">
+                        <i data-lucide="video" class="w-6 h-6 text-gold opacity-50 group-hover:opacity-100 transition-opacity duration-500 transform group-hover:scale-110"></i>
+                        <span class="font-serif text-2xl md:text-3xl font-light tracking-wide mt-8">Content<br>Creation</span>
+                    </div>
+                    <div class="bg-dark p-10 md:p-16 aspect-square flex flex-col justify-between group hover:bg-cream/[0.03] transition-colors duration-700">
+                        <i data-lucide="trophy" class="w-6 h-6 text-gold opacity-50 group-hover:opacity-100 transition-opacity duration-500 transform group-hover:scale-110"></i>
+                        <span class="font-serif text-2xl md:text-3xl font-light tracking-wide mt-8">Tournament<br>Growth</span>
+                    </div>
+                    <div class="bg-dark p-10 md:p-16 aspect-square flex flex-col justify-between group hover:bg-cream/[0.03] transition-colors duration-700">
+                        <i data-lucide="globe" class="w-6 h-6 text-gold opacity-50 group-hover:opacity-100 transition-opacity duration-500 transform group-hover:scale-110"></i>
+                        <span class="font-serif text-2xl md:text-3xl font-light tracking-wide mt-8">Global<br>Community</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer id="contact" class="max-w-[1800px] mx-auto px-6 md:px-12 flex flex-col items-center pt-24 pb-12 overflow-hidden">
+            <h2 class="gsap-reveal-text font-serif text-[15vw] leading-none font-bold text-cream uppercase tracking-tighter mb-8 whitespace-nowrap">MR. HITH</h2>
+            <p class="fade-up font-playfair text-xl md:text-3xl text-gold italic mb-24 text-center">
+                Aggressive Chess. Tactical Precision. The Road To IM.
+            </p>
+
+            <div class="w-full flex flex-col md:flex-row justify-between items-center gap-10">
+                <div class="flex flex-wrap justify-center gap-8 md:gap-12 text-[10px] uppercase tracking-[0.2em] font-medium text-cream/50">
+                    <a href="https://chess.com/member/Hitesh_hith" target="_blank" class="hover:text-gold transition-colors duration-500">Chess.com</a>
+                    <a href="https://lichess.org/@/HiteshMadras" target="_blank" class="hover:text-gold transition-colors duration-500">Lichess</a>
+                    <a href="https://instagram.com/Hitesh_hith" target="_blank" class="hover:text-gold transition-colors duration-500">Instagram</a>
+                    <a href="mailto:Hith.hitesh@gmail.com" class="hover:text-gold transition-colors duration-500">Email</a>
+                </div>
+
+                <div class="text-[10px] uppercase tracking-[0.3em] text-cream/30">
+                    © <span id="year"></span> MR. HITH. ALL RIGHTS RESERVED.
+                </div>
+            </div>
+        </footer>
+    </section>
+
+    <!-- Scripts: Lucide Icons, GSAP, ScrollTrigger, Lenis -->
+    <script src="https://unpkg.com/lucide@latest">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js">
+    </script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js">
+    </script>
+
+    <script>
+        // Set dynamic year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Initialize Lenis Smooth Scrolling (Crucial for Awwwards feel)
+        const lenis = new Lenis({
+            duration: 1.5,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Premium exponential ease out
+            direction: 'vertical',
+            gestureDirection: 'vertical',
+            smooth: true,
+            mouseMultiplier: 1,
+            smoothTouch: false,
+            touchMultiplier: 2,
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        // Register GSAP ScrollTrigger
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Custom Utility: Split text into lines/words for GSAP
+        document.querySelectorAll('.gsap-reveal-text').forEach(el => {
+            let text = el.innerText;
+            el.innerHTML = '';
+            // Handle existing <br> tags if any
+            let lines = text.split('\n');
+
+            lines.forEach((line, lineIndex) => {
+                if (line.trim() === '') return;
+                let lineDiv = document.createElement('div');
+                lineDiv.className = 'line-wrapper';
+
+                let words = line.split(' ');
+                words.forEach(word => {
+                    let wordWrap = document.createElement('span');
+                    wordWrap.className = 'word-wrapper';
+                    let wordInner = document.createElement('span');
+                    wordInner.className = 'word-inner';
+                    wordInner.innerText = word;
+                    wordWrap.appendChild(wordInner);
+                    lineDiv.appendChild(wordWrap);
+                });
+                el.appendChild(lineDiv);
+            });
+
+            // Animate
+            gsap.fromTo(el.querySelectorAll('.word-inner'), { y: '120%', rotateZ: 3, opacity: 0 }, {
+                y: '0%',
+                rotateZ: 0,
+                opacity: 1,
+                duration: 1.4,
+                ease: "power4.out",
+                stagger: 0.04,
+                scrollTrigger: {
+                    trigger: el,
+                    start: "top 95%",
+                    toggleActions: "play none none none"
+                }
+            });
+        });
+
+        // Image Mask Reveals
+        document.querySelectorAll('.mask-image-container').forEach(container => {
+            const mask = container.querySelector('.img-mask');
+            const img = container.querySelector('img');
+
+            if (mask && img) {
+                gsap.to(mask, {
+                    scaleY: 0,
+                    duration: 1.5,
+                    ease: "power4.inOut",
+                    scrollTrigger: {
+                        trigger: container,
+                        start: "top 85%",
+                    }
+                });
+
+                gsap.fromTo(img, { scale: 1.2 }, {
+                    scale: 1,
+                    duration: 2,
+                    ease: "power3.out",
+                    delay: 0.2,
+                    scrollTrigger: {
+                        trigger: container,
+                        start: "top 85%",
+                    }
+                });
+            }
+        });
+
+        // Hero Parallax (Subtle)
+        gsap.to('.parallax-hero', {
+            yPercent: 10,
+            ease: "none",
+            scrollTrigger: {
+                trigger: '.parallax-hero',
+                start: "top top",
+                end: "bottom top",
+                scrub: true
+            }
+        });
+
+        // General Image Parallax
+        document.querySelectorAll('.parallax-img').forEach(img => {
+            gsap.to(img, {
+                yPercent: 15,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: img.parentElement,
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: true
+                }
+            });
+        });
+
+        // Fade Ups
+        document.querySelectorAll('.fade-up').forEach(el => {
+            gsap.fromTo(el, { opacity: 0, y: 40 }, {
+                opacity: 1,
+                y: 0,
+                duration: 1.2,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: el,
+                    start: "top 90%",
+                }
+            });
+        });
+
+        // Horizontal Slide Reveals
+        document.querySelectorAll('.fade-slide-right').forEach(el => {
+            gsap.fromTo(el, { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 1.4, ease: "power3.out",
+                scrollTrigger: { trigger: el, start: "top 85%" } });
+        });
+        document.querySelectorAll('.fade-slide-left').forEach(el => {
+            gsap.fromTo(el, { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 1.4, ease: "power3.out",
+                scrollTrigger: { trigger: el, start: "top 85%" } });
+        });
+
+        // Style Rows staggered reveal
+        gsap.fromTo('.style-row', { opacity: 0, y: 20 }, {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            stagger: 0.1,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: '#style',
+                start: "top 70%"
+            }
+        });
+
+        // Progress Line Animation (Road to IM)
+        const progressLine = document.getElementById('progress-line');
+        if (progressLine) {
+            gsap.to(progressLine, {
+                width: '38%', // Hardcoded to "Tournament Player" stage for demo
+                duration: 2.5,
+                ease: "power4.inOut",
+                scrollTrigger: {
+                    trigger: progressLine.parentElement,
+                    start: "top 75%"
+                }
+            });
+
+            gsap.to('.progress-node', {
+                scale: 1,
+                duration: 0.6,
+                stagger: 0.15,
+                ease: "back.out(1.5)",
+                scrollTrigger: {
+                    trigger: progressLine.parentElement,
+                    start: "top 75%"
+                }
+            });
+        }
+    </script>
+</body>
+</html>
